@@ -45,7 +45,9 @@ class Window(QWidget):
         self.delete_button.setIcon(QtGui.QIcon(delete_icon))
         self.delete_button.setIconSize(QtCore.QSize(32, 32))
         self.download_button = QPushButton()
-        self.download_button.setStyleSheet(styles_black_background.download_button_style)
+        self.download_button.setStyleSheet(
+            styles_black_background.download_button_style
+        )
         download_icon = QtGui.QPixmap("icons/cloud.png")
         self.download_button.setIcon(QtGui.QIcon(download_icon))
         self.download_button.setIconSize(QtCore.QSize(32, 32))
@@ -73,6 +75,7 @@ class Window(QWidget):
         search_layout.addWidget(self.add_button)
         search_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
         self.main_v_box.addLayout(search_layout)
+
     def center_placement(self):
         label = QLabel("Type the url and add a video!")
         label.setStyleSheet(styles_black_background.label_style)
@@ -135,7 +138,7 @@ class MainWindow(QMainWindow):
         self.state = 0
         self.width, self.height = wx.GetDisplaySize()
         self.setGeometry(
-            round((self.width / 2) - 600), round((self.height / 2) - 300), 1200, 600
+            round((self.width / 2) - 800), round((self.height / 2) - 300), 1200, 600
         )
         self.setWindowTitle("YouTube Video Downloader")
         self.startMainMenu()
